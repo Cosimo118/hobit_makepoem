@@ -23,14 +23,14 @@ def get_yun(context,yuns):
 
 def main(target_word,target_nums):
     yuns = {}
-    with open('/Users/bytedance/Desktop/learn/poem_yunlv/14yun.txt','r') as f:
+    with open('14yun.txt','r') as f:
         for line in f:
             strs = re.split(r"：　　",line)
             yuns[strs[1][:-1]] = strs[0]
 
     #中文
     p2 = re.compile(r'[^\u4e00-\u9fa5]')
-    with open('/Users/bytedance/Desktop/learn/poem_yunlv/poem_test.txt','r') as f:
+    with open('all_300_poems.txt','r') as f:
         poem = f.read()
         words = p2.split(poem)
     for word in words:
